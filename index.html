@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <link rel="stylesheet" href="style.css">  <!-- Google fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -22,14 +23,32 @@
 
   <!-- Styles -->
   <style>
-    .font-lato{
-      font-family: 'Lato', sans-serif;
+    .font-lato {
+      font-family: "Lato", sans-serif;
+    }
+    .carousel img {
+      filter: brightness(0.75);
     }
   </style>
-  <body class="font-lato">
+  <!-- tailwind custom styles -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: "#da373d",
+            "bike-primary": "#E76F51",
+            "btn-primary-bg": "#F85559",
+          },
+        },
+      },
+    };
+  </script>
+
+  <body class="font-lato container mx-auto">
     <!-- header section -->
-    <header class="my-12">
-      <nav class="container mx-auto ">
+    <header class="">
+      <nav class="my-12">
         <div class="navbar bg-[#F85559] text-white rounded-full px-8 py-6">
           <div class="navbar-start">
             <div class="dropdown">
@@ -60,7 +79,9 @@
               </ul>
             </div>
             <div class="navbar-center hidden lg:flex">
-              <ul class="menu menu-horizontal px-1 font-lato text-xl items-center">
+              <ul
+                class="menu menu-horizontal px-1 font-lato text-xl items-center"
+              >
                 <li><a href="">Home</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Shop</a></li>
@@ -72,23 +93,117 @@
             ><img src="images/logo.png" alt="" /> Fruit Burst</a
           >
 
-          <div class="navbar-end">
-            <div class="invisible lg:visible form-control  relative">
-              <input type="text" placeholder="Search" class="input input-bordered rounded-full lg:w-64 md:w-auto bg-white"/>
-              <div class="search-icon absolute right-5 top-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M20.9998 21L15.8028 15.803M15.8028 15.803C17.2094 14.3965 17.9996 12.4887 17.9996 10.4995C17.9996 8.51035 17.2094 6.60262 15.8028 5.19605C14.3962 3.78947 12.4885 2.99927 10.4993 2.99927C8.51011 2.99927 6.60238 3.78947 5.19581 5.19605C3.78923 6.60262 2.99902 8.51035 2.99902 10.4995C2.99902 12.4887 3.78923 14.3965 5.19581 15.803C6.60238 17.2096 8.51011 17.9998 10.4993 17.9998C12.4885 17.9998 14.3962 17.2096 15.8028 15.803Z" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <div class="navbar-end invisible lg:visible">
+            <div class="form-control relative">
+              <input
+                type="text"
+                placeholder="Search"
+                class="input input-bordered rounded-full lg:w-64 md:w-auto bg-white"
+              />
+              <div class="absolute right-5 top-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M20.9998 21L15.8028 15.803M15.8028 15.803C17.2094 14.3965 17.9996 12.4887 17.9996 10.4995C17.9996 8.51035 17.2094 6.60262 15.8028 5.19605C14.3962 3.78947 12.4885 2.99927 10.4993 2.99927C8.51011 2.99927 6.60238 3.78947 5.19581 5.19605C3.78923 6.60262 2.99902 8.51035 2.99902 10.4995C2.99902 12.4887 3.78923 14.3965 5.19581 15.803C6.60238 17.2096 8.51011 17.9998 10.4993 17.9998C12.4885 17.9998 14.3962 17.2096 15.8028 15.803Z"
+                    stroke="#121212"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
             </div>
           </div>
         </div>
       </nav>
+      <!-- Banner section -->
+      <!-- Banner -->
+      <!-- if necessary, try with height  set height 600px -->
+      <div class="relative">
+        <div class="carousel w-full lg:h-[550px]">
+          <div id="slide1" class="carousel-item relative w-full">
+            <img src="/images/banner1.png" class="w-full" />
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+            >
+              <a href="#slide4" class="btn btn-circle">❮</a>
+              <a href="#slide2" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide2" class="carousel-item relative w-full">
+            <img src="/images/banner2.png" class="w-full" />
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+            >
+              <a href="#slide1" class="btn btn-circle">❮</a>
+              <a href="#slide3" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide3" class="carousel-item relative w-full">
+            <img src="/images/banner3.png" class="w-full" />
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+            >
+              <a href="#slide2" class="btn btn-circle">❮</a>
+              <a href="#slide4" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide4" class="carousel-item relative w-full">
+            <img src="/images/banner4.png" class="w-full" />
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+            >
+              <a href="#slide3" class="btn btn-circle">❮</a>
+              <a href="#slide1" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+
+          <div
+            class="absolute left-20 lg:top-20 lg:left-96 space-y-2 lg:space-y-7"
+          >
+            <h1
+              class="text-center text-2xl lg:text-6xl font-extrabold text-white"
+            >
+              Exotic tastes at your<br />doorstep
+            </h1>
+            <p class="text-center text-sm text-white">
+              We supply highly quality organic products
+            </p>
+            <button class="btn bg-btn-primary-bg border-none ml-16 lg:ml-48">
+              Shop Now
+            </button>
+          </div>
+
+          <div class="absolute lg:-bottom-20 bg-white lg:left-72 lg:p-6">
+            <div class="flex lg:space-x-10">
+              <div class="flex-row text-center">
+                <img src="images/fruit1.png" alt="" />
+                <p>Strawberry</p>
+              </div>
+              <div class="flex-row text-center">
+                <img src="images/fruit2.png" alt="" />
+                <p>Strawberry</p>
+              </div>
+              <div class="flex-row text-center">
+                <img src="images/fruit3.png" alt="" />
+                <p>Strawberry</p>
+              </div>
+              <div class="flex-row text-center">
+                <img src="images/fruit4.png" alt="" />
+                <p>Strawberry</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <!-- main -->
-    <main>
-    
-    </main>
+    <main></main>
     <!-- Footer -->
 
     <footer></footer>
